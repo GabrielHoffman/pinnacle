@@ -1,0 +1,40 @@
+Package: pinnacle
+Type: Package
+Title: Gene set analysis accounting for gene-gene correlations
+Version: 0.0.1
+Date: 2021-05-25
+Authors@R: person("Gabriel", "Hoffman", role=c("aut", "cre"), email="gabriel.hoffman@mssm.edu")
+Description: Coming soon...
+License: Artistic-2.0
+URL: https://gabrielhoffman.github.io/pinnacle
+BugReports: https://github.com/GabrielHoffman/pinnacle/issues
+Suggests:
+    BiocStyle,
+    knitr,
+    RUnit,
+biocViews: RNASeq,
+    GeneExpression,
+    DifferentialExpression,
+    BatchEffect,
+    QualityControl,
+    Regression,
+    Epigenetics,
+    FunctionalGenomics,
+    Transcriptomics,
+    Normalization,
+    SingleCell,
+    Preprocessing,
+    Software
+Depends:
+    R (>= 4.1.0),
+    ggplot2,
+    variancePartition (>= 1.27.2)
+Imports:
+    limma,
+    GSEABase,
+    decorrelate,
+    Matrix,
+    utils,
+    stats
+RoxygenNote: 7.1.2
+RdMacros: Rdpack
