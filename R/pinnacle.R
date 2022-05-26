@@ -14,28 +14,29 @@
 #'
 #' Perform Gene Set Analysis (GSA) by comparing t-statistics from a given gene set to genome-wide t-statistics, while accounting for co-expression structure
 #'
-#' @param fit regression model fit by \code{limma::lmFit) or \code{variancePartition::dream)
+#' @param fit regression model fit by \code{limma::lmFit()} or \code{variancePartition::dream()}
 #' @param coef indicate coefficient or contrast to be extracted from \code{fit} using \code{topTable}
 #' @param geneSets \code{GeneSetCollection} from \link{GSEABase}
 #' @param data \code{data.frame} storing properties of each gene, with rownames being gene names
 #' @param setSize array of two elements specifying the min and max number of genes allowed in a gene set. Only gene sets satisfying these criteria are retained 
 #' @param formula formula specifying covariates in regression using t-statistics as response
 #' @param quiet suppresss messages 
-#' @param ... other arguments passed to \link{lm_each_eclairs} and then \link{lm}
+#' @param ... other arguments passed to \code{lm_each_eclairs()} and then \link{lm}
 #'
-#' @return data.frame with results for each gene set
+#' @return \code{data.frame} with results for each gene set
 #' 
-#' @details
+##' @details
 #' 
-#' @examples
+##' @examples
 #'
-#' @import variancePartition limma GSEABase
+#' @import variancePartition limma GSEABase Rdpack
 #' @importFrom decorrelate eclairs lm_each_eclairs
 #' @importFrom stats as.formula model.matrix p.adjust
+#' @importFrom methods is
 #' @importFrom Matrix colSums
 #' 
 #' @export
-pinnacle = function( fit, coef, geneSets, data, formula = ~ 1, setSize=c(10, 5000), quiet = FALSE, ecl=NULL,...){
+pinnacle = function( fit, coef, geneSets, data, formula = ~ 1, setSize=c(10, 5000), quiet = FALSE,...){ # ecl=NULL,
 
 	# Checks
 	########

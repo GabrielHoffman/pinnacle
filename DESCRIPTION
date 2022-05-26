@@ -33,8 +33,13 @@ Imports:
     limma,
     GSEABase,
     decorrelate,
+    locStra,
+    data.table,
+    ggrepel,
+    reshape2,
     Matrix,
-    utils,
+    Rdpack,
+    methods,
     stats
 RoxygenNote: 7.1.2
 RdMacros: Rdpack
